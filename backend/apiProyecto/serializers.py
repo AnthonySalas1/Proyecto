@@ -31,11 +31,25 @@ class TallaSerializer(serializers.ModelSerializer):
         fields = '__all__' 
         read_only_fields = ('fechaCreacion', 'fechaModificacion')
 
-class UsuarioSerializer(serializers.ModelSerializer):
+
+class UsuariorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Usuario
         fields = '__all__' 
-        read_only_fields = ('fechaCreacion', 'fechaModificacion')
+        extra_kwargs = {
+            'password': {'write_only': True}
+        }
+
+    def create(self, validated_data):
+        password = validated_data.pop('password', None)
+        instance = self.Meta.model(**validated_data)
+        if password is not None:
+            instance.set_password(password)
+        instance.save()
+        return instance
+    
+
+
 
 class EntidadSerializer(serializers.ModelSerializer):
     class Meta:
@@ -54,4 +68,19 @@ class PermisoSerializer(serializers.ModelSerializer):
         model = Permiso
         fields = '__all__' 
         read_only_fields = ('fechaCreacion', 'fechaModificacion')
+
+class ModuloSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Modulo
+        fields = '__all__' 
+        read_only_fields = ('fechaCreacion', 'fechaModificacion')
+
+class CargaCSVSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CargaCSV
+        fields = '__all__'
+
+
+
+
 
