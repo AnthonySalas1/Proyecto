@@ -1,0 +1,41 @@
+<h2>Roles</h2>
+
+<table class="table table-dark table-sm">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Rol</th>
+      <th scope="col">Descripion</th>
+
+      <th scope="col">Fecha Creación</th>
+      <th scope="col">Fecha Modificación</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of listaRoles; let i = index">
+      <td>
+        <div>{{ item.id }}</div>
+      </td>
+      <td>
+        <div
+          #divRol
+          (blur)="actualizarItem(i, 'rol', item, $event)"
+          contenteditable
+        >
+          {{ item.rol }}
+        </div>
+      </td>
+      <td></td>
+      <td>
+        <div>{{ item.fechaCreacion ?? "" }}</div>
+      </td>
+      <td>
+        <div>{{ item.fechaModificacion }}</div>
+      </td>
+      <th scope="col"></th>
+      <button>Modificar</button>
+      <button (click)="eliminar(item)">Eliminar</button>
+    </tr>
+  </tbody>
+</table>
+<button (click)="agregar()">Agregar</button>

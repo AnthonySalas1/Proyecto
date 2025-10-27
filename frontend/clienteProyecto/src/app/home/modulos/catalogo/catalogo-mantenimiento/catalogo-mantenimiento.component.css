@@ -1,0 +1,12 @@
+::ng-deep .mat-dialog-content {
+    overflow-y: hidden !important;
+        overflow-x: hidden !important;
+}
+.modal-contenido{
+    overflow-y: hidden !important;
+        overflow-x: hidden !important;
+         overflow: hidden;
+}
+.file-custom::after {
+            content: attr(data-after);
+        }

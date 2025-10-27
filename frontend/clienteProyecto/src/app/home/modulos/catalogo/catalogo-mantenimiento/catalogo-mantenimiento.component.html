@@ -1,0 +1,137 @@
+<div mat-dialog-content class="row">
+  <div class="col-12 m-0">
+    <h2 style="color: rgb(34, 17, 39)">Producto Mantenimiento</h2>
+  </div>
+</div>
+<form [formGroup]="productoForm" (ngSubmit)="guardar()">
+  <div mat-dialog-content class="modal-contenido  ">
+    <div class="row ">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Nombre Producto: </mat-label>
+        <input matInput type="text" formControlName="nombreProducto" />
+      </mat-form-field>
+    </div>
+    <div class="row p-0 m-0">
+      <div class="col-6">
+        <mat-form-field>
+          <mat-label>Marca</mat-label>
+          <mat-select
+            formControlName="idMarca"
+            [compareWith]="compareThem"
+            name="marca"
+          >
+            @for (marca of listaMarcas; track marca) {
+              <mat-option [value]="marca.id">{{ marca.nombreMarca }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-6 ">
+        <mat-form-field>
+          <mat-label>Modelo</mat-label>
+          <mat-select
+            formControlName="idModelo"
+            [compareWith]="compareThem"
+            name="modelo"
+          >
+            @for (modelo of listaModelos; track modelo) {
+            <mat-option [value]="modelo.id">{{
+              modelo.nombreModelo
+            }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row p-0 m-0">
+      <div class="col-6">
+        <mat-form-field>
+          <mat-label>Talla</mat-label>
+          <mat-select
+            formControlName="idTalla"
+            [compareWith]="compareThem"
+            name="talla"
+          >
+            @for (talla of listaTallas; track talla) {
+            <mat-option [value]="talla.id">{{
+              talla.numeroCalzado
+            }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field>
+          <mat-label>Color</mat-label>
+          <mat-select
+            formControlName="idColor"
+            [compareWith]="compareThem"
+            name="color"
+          >
+            @for (color of listaColores; track color) {
+            <mat-option [value]="color.id">{{ color.nombreColor }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row p-0 m-0">
+      <div class="col-6">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Precio Venta: </mat-label>
+          <input matInput type="number" formControlName="precioVenta" />
+        </mat-form-field>
+      </div>
+      <div class="upload-btn col-6 mb-3">
+        <label class="form-label" for="image"
+          >Imagen:
+          <input
+            id="image"
+            class="form-control h-50"
+            style="width: 88%"
+            type="file"
+            (change)="onFileSelected($event)"
+            formControlName="imagenBase64"
+          />
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="row w-100 p-3 align-items-center m-0">
+    <div class="col-4 d-grid ">
+      <button
+        matButton
+        mat-dialog-close
+        class="btn btn-dark btn-lg"
+        matButton="filled"
+        type="button"
+        (click)="descargarPDF()"
+      >
+        Descargar
+      </button>
+    </div>
+    <div class="col-4 d-grid ">
+      <button
+        matButton
+        mat-dialog-close
+        class="btn btn-success btn-lg"
+        matButton="filled"
+        type="submit"
+      >
+        Guardar
+      </button>
+    </div>
+        <div class="col-4 d-grid ">
+      <button
+        matButton
+        mat-dialog-close
+        class="btn btn-danger btn-lg"
+        matButton="filled"
+        type="button"
+        (click)="eliminar()"
+      >
+        Eliminar
+      </button>
+    </div>
+  </div>
+</form>

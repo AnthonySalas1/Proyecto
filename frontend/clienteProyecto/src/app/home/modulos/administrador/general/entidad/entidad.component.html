@@ -1,0 +1,49 @@
+<h2>Entidades</h2>
+
+<table class="table table-dark table-sm">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Documento Identidad</th>
+      <th scope="col">Dirección</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">fecha de creación</th>
+      <th scope="col">Fecha de Modificación</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of listaEntidades">
+      <td>
+        <div>{{ item.id }}</div>
+      </td>
+      <td>
+        <div (blur)="actualizarItem( item, $event)"
+          contenteditable>{{ item.nombreEntidad }}</div>
+      </td>
+      <td>
+        <div (blur)="actualizarItem( item, $event)" contenteditable>{{ item.documentoIdentidad }}</div>
+      </td>
+      <td>
+        <div (blur)="actualizarItem( item, $event)" contenteditable>{{ item.direccion }}</div>
+      </td>
+      <td>
+        <div  (blur)="actualizarItem( item, $event)"contenteditable>{{ item.correo }}</div>
+      </td>
+      <td>
+        <div  (blur)="actualizarItem( item, $event)" contenteditable>{{ item.telefono }}</div>
+      </td>
+      <td>
+        <div>{{ item.fechaCreacion }}</div>
+      </td>
+      <td>
+        <div>{{ item.fechaModificacion }}</div>
+      </td>
+       <th scope="col"></th>
+      <button>Modificar</button>
+      <button (click)="eliminar(item)">Eliminar</button>
+    </tr>
+  </tbody>
+</table>
+<button (click)="agregar()">Agregar</button>

@@ -1,0 +1,53 @@
+.busqueda{
+  position: absolute;
+  margin-top: 5%;
+  left: 5%;
+  right: 5%;
+ top: 0;
+
+}
+
+img {
+
+ 
+  box-shadow: -1px 15px 30px -12px black;
+   z-index: 9999;
+ 
+}
+
+.productos{
+width:100%;
+top:0;
+
+}
+
+.my-custom-btn-upload {
+
+  width: 5%;
+  position:fixed;
+  bottom: 20%;
+  right: 0;
+  padding: 0.65%;
+  margin: 7px;
+  border-radius: 50px;
+  background-color: bisque;
+}
+
+.my-custom-btn {
+
+    width: 5%;
+  position:fixed;
+  bottom: 12%;
+  
+  padding: 0;
+
+  border-radius: 50px;
+  background-color: bisque;
+
+  z-index: 15;
+  bottom: 5%;
+  overflow: hidden;
+  right:0.45%;
+  margin-right: 0;
+  
+}

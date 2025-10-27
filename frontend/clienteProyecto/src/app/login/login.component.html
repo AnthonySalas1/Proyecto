@@ -1,0 +1,39 @@
+<div class="container">
+<form
+  [formGroup]="myform"
+  class="container-fluid border mt-5 align-content-center"
+  style="width: 300px; height: 300px"
+  (ngSubmit)="ingresar()"
+>
+  <div class="">
+    <h1 class="h3bmb-4 fw-normal" style="text-align: center">
+      INICIO DE SESION
+    </h1>
+
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        name="username"
+        formControlName="username"
+        required
+      />
+      <label for="floatingInput">username</label>
+    </div>
+    <div class="form-floating">
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        name="password"
+        formControlName="password"
+        required
+      />
+      <label for="floatingPassword">password</label>
+    </div>
+
+    <button class="btn btn-primary w-100 py-2" type="submit">Ingresar</button>
+  </div>
+</form>
+</div>

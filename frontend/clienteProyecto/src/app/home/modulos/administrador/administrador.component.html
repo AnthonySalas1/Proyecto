@@ -1,0 +1,51 @@
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div
+      class="col-md-3 sidebar p-2 mt-2"
+      style="background-color: rgba(1, 16, 26, 0.74); height: 800px;"
+    >
+      <ul class="nav flex-column">
+        <h6>CONFIGURACION</h6>
+        <li class="nav-item">
+          <a class="nav-link" (click)="seleccionarOpcion('rol')">Roles</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="seleccionarOpcion('entidad')"
+            >Entidades</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="seleccionarOpcion('usuario')"
+            >Usuarios</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="seleccionarOpcion('perfil')">Perfiles</a>
+        </li>
+      </ul>
+      <ul class="nav flex-column">
+        <h6>OBJETOS DE NEGOCIO</h6>
+        <li class="nav-item">
+          <a class="nav-link" (click)="seleccionarOpcion('Marca')">Marcas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="seleccionarOpcion('Tallas')">Tallas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="seleccionarOpcion('modelo')">Modelos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="seleccionarOpcion('color')">Colores</a>
+        </li>
+      </ul>
+    </div>
+
+    <div *ngIf="mostrarContenidoRol" class="col-md-9 p-4">
+      <app-rol [datos]="datos"></app-rol>
+  
+    </div>
+        <div *ngIf="mostrarContenidoEntidad" class="col-md-9 p-4">
+      <app-entidad [datos]="datos"></app-entidad>
+    </div>
+  </div>
+</div>
