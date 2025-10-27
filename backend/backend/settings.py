@@ -91,9 +91,9 @@ DATABASES = {
         'ENGINE': 'mssql',
         'NAME':'SIGS',
         'USER':'django',
-        'PASSWORD':'123',
+        'PASSWORD':'aL3578TS.',
         'PORT':'',
-        'HOST':'DESKTOP-5UDFTP1\\MSSQLSERVER01',
+        'HOST':'104.154.200.14',
         'OPTIONS': {
             'driver': 'ODBC Driver 17 for SQL Server',
             'trusted_connection': 'yes'
