@@ -90,7 +90,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'mssql',
         'NAME':'SIGS',
-        'USER':'django',
+        'USER':'sqlserver',
         'PASSWORD':'aL3578TS.',
         'PORT':'',
         'HOST':'104.154.200.14',
