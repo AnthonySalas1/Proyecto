@@ -41,7 +41,7 @@ export class RegistroComponent implements OnInit {
     this.form.value.idRol = 1;
     this.form.value.idPermiso = 1;
 
-    this.http.post(URL_BASE_API +'/registro/', this.form.value).subscribe(res => {
+    this.http.post(URL_BASE_API +'registro/', this.form.value).subscribe(res => {
       this.router.navigate(['/login']);
     });
     
